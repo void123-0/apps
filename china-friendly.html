@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>App Center - 应用中心</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', '微软雅黑', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            overflow-x: hidden;
+        }
+        
+        .container { 
+            max-width: 560px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            padding: 40px 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            font-size: 48px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        h1 { 
+            color: #1a1a2e;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle { 
+            color: #666;
+            font-size: 15px;
+            font-weight: normal;
+            line-height: 1.5;
+        }
+        
+        .apps { 
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        
+        @media (min-width: 480px) {
+            .apps {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .app-link { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 28px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .app-link:hover { 
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .app-link:active {
+            transform: translateY(-4px);
+        }
+        
+        .icon { 
+            font-size: 48px;
+            margin-bottom: 12px;
+            display: block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        
+        .info h3 { 
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+        }
+        
+        .info p { 
+            font-size: 13px;
+            font-weight: normal;
+            opacity: 0.95;
+            line-height: 1.4;
+        }
+        
+        .note {
+            margin-top: 20px;
+            padding: 12px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+        }
+        
+        @media (max-width: 360px) {
+            .container {
+                padding: 32px 16px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .app-link {
+                padding: 24px 16px;
+            }
+            
+            .icon {
+                font-size: 40px;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 48px 40px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            .app-link {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="logo">💻</span>
+            <h1>App Center</h1>
+            <p class="subtitle">我的个人应用中心</p>
+        </div>
+        
+        <div class="apps">
+            <button class="app-link" onclick="showAppInfo('todo')">
+                <span class="icon">📝</span>
+                <div class="info">
+                    <h3>待办事项</h3>
+                    <p>任务管理工具</p>
+                </div>
+            </button>
+            
+            <button class="app-link" onclick="showAppInfo('translator')">
+                <span class="icon">🌐</span>
+                <div class="info">
+                    <h3>翻译工具</h3>
+                    <p>多语言翻译器</p>
+                </div>
+            </button>
+        </div>
+        
+        <div class="note">
+            ✨ 所有应用均可离线使用（数据保存在浏览器中）
+        </div>
+    </div>
+    
+    <script>
+        function showAppInfo(app) {
+            if (app === 'todo') {
+                alert('📝 待办事项应用\n\n✅ 功能：创建、编辑、删除任务\n💾 数据保存：浏览器本地存储\n⏰ 离线可用：是\n\n即将上线，敬请期待！');
+            } else if (app === 'translator') {
+                alert('🌐 翻译工具\n\n✅ 功能：支持多语言翻译\n💾 数据保存：浏览器本地存储\n⏰ 离线可用：是\n\n即将上线，敬请期待！');
+            }
+        }
+    </script>
+</body>
+</html>
