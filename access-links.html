@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App Center - 访问链接</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #1a1a2e;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+        
+        .link-group {
+            margin-bottom: 30px;
+        }
+        
+        .link-group h2 {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .link-box {
+            background: #f5f5f5;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .link-box:hover {
+            border-color: #667eea;
+            background: #f0f5ff;
+            transform: translateX(4px);
+        }
+        
+        .link-box a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-all;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .link-box a::after {
+            content: '→';
+            margin-left: 8px;
+            flex-shrink: 0;
+        }
+        
+        .description {
+            font-size: 13px;
+            color: #888;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .status.available {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.region-limited {
+            background: #fff3cd;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 App Center - 访问方式</h1>
+        
+        <div class="link-group">
+            <h2>✅ 推荐链接（全球通用）</h2>
+            <div class="link-box">
+                <a href="https://cdn.jsdelivr.net/gh/void123-0/apps@master/index.html" target="_blank">
+                    jsDelivr CDN 链接
+                    <span class="status available">推荐</span>
+                </a>
+                <div class="description">🚀 速度快，全球可访问，无需 VPN，适合所有地区</div>
+            </div>
+        </div>
+        
+        <div class="link-group">
+            <h2>📱 备用链接</h2>
+            <div class="link-box">
+                <a href="https://void123-0.github.io/apps/" target="_blank">
+                    GitHub Pages 链接
+                </a>
+                <div class="description">📌 官方源头，在中国大陆需要 VPN 访问</div>
+            </div>
+            
+            <div class="link-box">
+                <a href="https://void123-0-apps.vercel.app/" target="_blank">
+                    Vercel 部署 (即将推出)
+                </a>
+                <div class="description">⏳ 正在配置中，无需 VPN</div>
+            </div>
+        </div>
+        
+        <div class="link-group">
+            <h2>💾 本地文件</h2>
+            <div class="link-box">
+                <a href="./index.html" target="_blank">
+                    本地 index.html
+                </a>
+                <div class="description">📂 直接打开本地文件（仅在本机有效）</div>
+            </div>
+        </div>
+        
+        <p style="text-align: center; color: #999; font-size: 12px; margin-top: 30px;">
+            ✨ 所有链接都指向同一个应用，选择最适合你的方式访问即可
+        </p>
+    </div>
+</body>
+</html>
